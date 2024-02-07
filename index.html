@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Image Example</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Menghubungkan file CSS -->
+  <title>Final Confession On Earth </title>
+  <style>
+    /* CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #064057; /* Add background color */
+      background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('background.jpg'); /* Add gradient overlay for better readability */
+      background-size: cover;
+      background-position: center;
+      animation: fadeIn 2s ease-out; /* Add fade-in animation */
+    }
+
+    #lyrics {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+      background-color: rgba(14, 105, 141, 0.8);
+      animation: slideIn 2s ease-out; /* Add slide-in animation */
+    }
+
+    #lyrics2 {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+      background-color: rgba(14, 105, 141, 0.8);
+      animation: slideIn 2s ease-out; /* Add slide-in animation */
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      align-items: center;
+      justify-content: center;
+      color: #333; /* Change text color */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow for better contrast */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pretender - Dism</h1>
+  <p>Uhm, aku disini mau cerita dikitt hehe, mungkin ini terakhir kalinya aku melakukan sesuatu buat kamu. <br>
+    Aku bakal perhatiin kamu berkembang dari jauh kok! btw aku effort bukan krn mau sesuatu dari kamu ya. <br>
+    Ini lagu favorit aku... kebetulan liriknya juga relate sama keadaanku sekarang!.<br>
+    Makasih banyak! walau cuma sebentar, aku seneng banget bisa kenal, dan deket sama kamu.<br>
+    Baca liriknya dan denger lagunya sampe selesai ya.. perasaan aku ada di liriknya semua.<br>
+    Maaf kalo alay yaa xixixi, mungkin ini cara confess paling aneh yg bakalan pernah kamu terima.<br>
+    Semoga perasaanku sampe ke kamu see you on the other side..... ikan</p>
+  <div id="lyrics">
+    <!-- Lyrics will be displayed here -->
+  </div>
+  <audio id="audioPlayer" controls>
+    <source src="C:\Users\nazla\Downloads\y2mate.com - Official髭男dism  PretenderOfficial Video.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+      
+  <script>
+    // JavaScript to fetch and display lyrics
+    const lyricsDiv = document.getElementById('lyrics');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const songLyrics = [
+      { time: 32, text: '"Kisah cinta aku sama kamu, yang gapernah dimulai"' },
+      { time: 35, text: '"Dari awal juga cinta sepihak:)' },
+      { time: 41, text: '"Walaupun aku selalu sama kamu"' },
+      { time: 44, text: '"Ya tetep, akhirnya aku bukan siapa-siapa"' },
+      { time: 47, text: '"Permintaan maaf kamu yang kaya biasanya"' },
+      { time: 50, text: '"Kalo udah terbiasa ternyata rasanya ga gitu buruk"' },
+      { time: 57, text: '"Kisah cinta yang gapernah dimulai ini..."' },
+      { time: 59, text: '"Ternyata sama kaya hidup ya.."' },
+      { time: 63, text: '"Ga bakalan terus-terusan berlanjut"' },
+      { time: 65, text: '"Dan aku tau itu"' },
+      { time: 68, text: '"Semoga dengan latar tempat yang beda"' },
+      { time: 70, text: '"Dan hubungan yang beda juga"' },
+      { time: 73, text: '"Suatu saat nanti kita bisa ketemu"' },
+      { time: 75, text: '"Di garis dunia yang lain"' },
+      { time: 78, text: '"Sama sikap yang beda"' },
+      { time: 81, text: '"Dan kualitas diri yang beda juga"' },
+      { time: 84, text: '"Aku harap aku bisa sampein...."' },
+      { time: 87, text: '"Perasaan ini ke kamu:)"' },
+      { time: 89, text: '"Tapi terus berharap juga apa gunanya?..."' },
+      { time: 93, text: '"Aku pergi ya:)"' },
+      { time: 94, text: '"Abisnya aku bukan..."' },
+      { time: 96, text: '".. orang yang ditakdirin sama kamu:)"' },
+      { time: 99, text: '"Sakit banget, aku juga ga nyangkal itu.."' },
+      { time: 101, text: '"..Tapi susah juga buat aku berhenti:("' },
+      { time: 105, text: '"Mikirin kamu aja kalo boleh jujur..."' },
+      { time: 107, text: '"Sakit.. sakit banget"' },
+      { time: 112, text: '"Tapi juga manis..ngga, ngga..."' },
+      { time: 114, text: '"Aku harus pergi"' },
+      { time: 115, text: '"Emangnya, buat kamu, aku itu apa coba?"' },
+      { time: 120, text: '"Jawabannya aja, aku ga tau"' },
+      { time: 122, text: '"Ya aku gamau tau juga sih"' },
+      { time: 126, text: '"Tapi, ada satu hal yang cuma bisa aku bilang ke kamu...."' },
+      { time: 134, text: '"Kalo kamu itu indah banget:)"' },
+      { time: 141, text: '"Orang lain dengan bangganya.."' },
+      { time: 144, text: '"Pamerin Cinta sama Logika"' },
+      { time: 147, text: '"Tapi ga ada yang aku ngerti"' },
+      { time: 151, text: '"Kaya liat pemandangan malam kota yang ga aku tau"' },
+      { time: 155, text: '"Dari jendela pesawat"' },
+      { time: 162, text: '"Semoga dengan latar tempat yang beda"' },
+      { time: 164, text: '"Dan hubungan yang beda juga"' },
+      { time: 166, text: '"Suatu saat nanti kita bisa ketemu"' },
+      { time: 169, text: '"Di garis dunia yang lain"' },
+      { time: 172, text: '"Dari hatiku yang pegang erat rasa ini"' },
+      { time: 174, text: '"Aku pengen bilang dan teriak"' },
+      { time: 177, text: '"Kalo Aku Suka Kamu:)"' },
+      { time: 178, text: '"Tanpa aku ngerasa takut"' },
+      { time: 182, text: '"Tapi aku juga tau..."' },
+      { time: 184, text: '"Kalo harapan ini juga akhirnya sia-sia..."' },
+      { time: 187, text: '"Aku pergi ya.."' },
+      { time: 188, text: '"Pegang tangan kamu itu"' },
+      { time: 189, text: '"Jauuhh banget dari akhir cerita.."' },
+      { time: 193, text: '"Tiap kali aku tunda"' },
+      { time: 195, text: '"Aku ngerasain masa depan yang nyakitin banget:)"' },
+      { time: 199, text: '"Kamu ga ada di sisi aku.."' },
+      { time: 201, text: '"Kenyataan ini bikin aku nangis brutallll"' },
+      { time: 207, text: '"Sakit banget tau:)"' },
+      { time: 213, text: '"...Bentar Nafas dulu..."' },
+      { time: 216, text: '' },
+      { time: 229, text: '"Aku pergi ya.."' },
+      { time: 230, text: '"Abisnya aku bukan..."' },
+      { time: 232, text: '".. orang yang ditakdirin sama kamu:)"' },
+      { time: 235, text: '"Sakit banget, aku juga ga nyangkal itu.."' },
+      { time: 237, text: '"..Tapi susah juga buat aku berhenti:("' },
+      { time: 241, text: '"Mikirin kamu aja kalo boleh jujur..."' },
+      { time: 243, text: '"Sakit.. sakit banget"' },
+      { time: 248, text: '"Tapi juga manis..ngga, ngga..."' },
+      { time: 250, text: '"Aku harus pergi"' },
+      { time: 251, text: '"Emangnya, buat kamu, aku itu apa coba?:)"' },
+      { time: 255, text: '"Jawabannya aja, aku ga tau"' },
+      { time: 258, text: '"Ya aku gamau tau juga sih"' },
+      { time: 261, text: '"Tapi, ada satu hal yang cuma bisa aku bilang ke kamu...."' },
+      { time: 269, text: '"Kalo kamu itu indahh!!!"' },
+      { time: 270, text: '"Mungkin ini semua akhir dari takdir ini (Ga Begitu buruk kan?)"' },
+      { time: 271, text: '"Ga ada yang abadi, dan juga janji"' },
+      { time: 272, text: '"Tapi..."' },
+      { time: 273, text: '"Kamu itu Indah bangett!:)"' },
+      { time: 270, text: '~ Udah dehhh ~' }
+      // Add more lines with timing information as needed
+      
+    ];
+ 
+    
+
+    function displayLyrics() {
+      // Get the current time of the audio player
+      const currentTime = audioPlayer.currentTime;
+
+      // Find the current line of lyrics based on the current time
+      let currentLine = null;
+      for (let i = 0; i < songLyrics.length; i++) {
+        if (currentTime >= songLyrics[i].time && 
+            (i === songLyrics.length - 1 || currentTime < songLyrics[i + 1].time)) {
+          currentLine = songLyrics[i];
+          break;
+        }
+      }
+
+      // Display the current line of lyrics
+      if (currentLine) {
+        lyricsDiv.innerText = currentLine.text;
+      } else {
+        lyricsDiv.innerText = ''; // Clear lyrics if no line found
+      }
+    }
+
+    // Call displayLyrics function whenever the time of the audio player changes
+    audioPlayer.addEventListener('timeupdate', displayLyrics);
+
+    // Call displayLyrics function initially to display the first line of lyrics
+    displayLyrics();
+  </script>
+</body>
+</html>

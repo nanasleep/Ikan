@@ -1,0 +1,16 @@
+/* CSS for styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('background.jpg'); /* Menggunakan gambar 'background.jpg' sebagai latar belakang */
+  background-size: cover; /* Memastikan gambar mengisi seluruh area latar belakang */
+  background-position: center; /* Mengatur posisi gambar di tengah latar belakang */
+  background-repeat: no-repeat; /* Menghindari pengulangan gambar jika ukurannya lebih kecil dari area latar belakang */
+  color: rgb(12, 128, 182); /* Warna teks putih agar kontras dengan latar belakang */
+}
