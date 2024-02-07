@@ -12,5 +12,5 @@ body {
   background-size: cover; /* Memastikan gambar mengisi seluruh area latar belakang */
   background-position: center; /* Mengatur posisi gambar di tengah latar belakang */
   background-repeat: no-repeat; /* Menghindari pengulangan gambar jika ukurannya lebih kecil dari area latar belakang */
-  color: rgb(12, 128, 182); /* Warna teks putih agar kontras dengan latar belakang */
+  color: rgb(1, 30, 43); /* Warna teks putih agar kontras dengan latar belakang */
 }
